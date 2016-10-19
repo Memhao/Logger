@@ -7,14 +7,19 @@ public class Main {
 	{
 		System.out.println("Hello out there!");
 		SharedResource sr = new SharedResource();
-		Client client = new Client("Mao",sr);
+		Client client0 = new Client("Mao",sr);
 		Client client1 = new Client("Memhao",sr);
-		Server server = new Server("Xenia", sr);
-		System.out.println(client);
+		Client client2 = new Client("Maoaa",sr);
+		Client client3 = new Client("Memhaoaa",sr);
+		
+		Server server0 = new Server("Xenia", sr);
+		Server server1 = new Server("XCniaa", sr);
+		Server server2 = new Server("Fenia", sr);
+		Server server3 = new Server("FFniaa", sr);
 
-		client.start();
-		client1.start();
-		server.start();
+		server0.start();
+		client0.start();
+
 	
 	}
 }
