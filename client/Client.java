@@ -1,5 +1,6 @@
 package client;
 
+
 import message.Message;
 import message.Priority;
 
@@ -17,12 +18,20 @@ public class Client extends Thread{
 	}
 	public void run()
 	{
-		int i = 0;
-		while(i<5)
-		{
-			i++;
-			_shared.pushNewResource(new Message("ssssssss",Priority.DEBUG));
-			System.out.println(i);
+
+		for(;;){
+			try {
+				Thread.sleep(2500);
+				System.out.println("Client is on the floor");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			System.out.println("#[CLIENT] ID :"+this.getId());
+
+			for(int i = 0; i < 5; i++){
+
+				_shared.pushNewResource(new Message("Message:"+Math.random()*i,Priority.DEBUG));
+			}
 		}
 	}
 }

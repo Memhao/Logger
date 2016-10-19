@@ -21,10 +21,19 @@ public class Server extends Thread{
 	}
 	public void run()
 	{
-		while(true){
+		for(;;)
+		{
+			try {
+				Thread.sleep(5000);
+				System.out.println("Server is on the floor");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}	
+			System.out.println("#[SERVER] ID :"+this.getId());
 			Message res = _shared.popResource();
 			System.out.println(res);
-		}
 
+
+		}
 	}
 }
